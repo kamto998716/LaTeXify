@@ -834,6 +834,10 @@ function buildPrompt(options, markdown) {
   if (options.strictLatexOnly) {
     instructions.push("Do not add commentary, summaries, markdown fences, or explanatory prose outside the converted LaTeX output.");
   }
+
+  // <-- Insert the new line here:
+  instructions.push("For each math symbol, ensure it is enclosed in $...$ with no extra spaces inside the delimiters (e.g. replace \"$ n $\" with \"$n$\") so MathType in Word can reliably detect math.");
+
   instructions.push("Keep numbering, mark allocations, punctuation, and section hierarchy as close to the source as possible.");
 
   if (options.customPrompt) {
